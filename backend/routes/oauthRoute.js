@@ -14,7 +14,7 @@ router.get(
     failureRedirect: "/login",
   }),
   (req, res) => {
-    res.redirect("http://localhost:5173"); // Redirect to React front-end
+    res.redirect("http://localhost:5173"); 
   }
 );
 

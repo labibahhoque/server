@@ -150,7 +150,7 @@ export const enrollInCourses = async (req, res) => {
       return res.status(403).json({ success: false, message: "Unauthorized access" });
     }
 
-    // Ensure user has an enrolledCourses array
+   
     if (!user.enrolledCourses) {
       user.enrolledCourses = [];
     }
@@ -158,7 +158,7 @@ export const enrollInCourses = async (req, res) => {
     const courses = await Course.find({ _id: { $in: courseIds } });
 
     for (const course of courses) {
-      // Ensure course has a students array
+      
       if (!course.students) {
         course.students = [];
       }

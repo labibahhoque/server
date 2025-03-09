@@ -28,20 +28,20 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 import session from "express-session";
-import MongoStore from "connect-mongo"; // To store sessions in your MongoDB
+import MongoStore from "connect-mongo"; 
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET, // Load from .env
+    secret: process.env.SESSION_SECRET, 
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI, // Your MongoDB URI
+      mongoUrl: process.env.MONGO_URI,
     }),
     cookie: {
-      secure: false, // Set true if using HTTPS
+      secure: false, 
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000, // 1 day
+      maxAge: 24 * 60 * 60 * 1000, 
     },
   })
 );

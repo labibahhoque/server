@@ -35,7 +35,7 @@ export const registerUser = async (req, res) => {
       password: hashedPassword,
       role,
       profile: {
-        profilePhoto: profilePhoto || "default_profile_url", // Use a default URL if no photo is uploaded
+        profilePhoto: profilePhoto || "default_profile_url",
       },
     });
 
